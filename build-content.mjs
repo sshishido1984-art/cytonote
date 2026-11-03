@@ -1,4 +1,6 @@
 import {writeFileSync} from 'node:fs';
+import {addBatch} from './content-2026-11-04.mjs';
+import {referenceFor} from './question-reference.mjs';
 const source=(title,url,locator,kind='公式教材')=>({title,url,locator,kind});
 const S={
  necrosis:source('University of Edinburgh · Necrosis','https://pathologia.ed.ac.uk/topic/necrosis/','Cell injuries / Cellular morphology / Morphological patterns'),
@@ -36,10 +38,10 @@ const S={
  menChild:source('NCI · Childhood MEN Syndromes Treatment (PDQ)','https://www.cancer.gov/types/multiple-endocrine-neoplasia/hp-child-men-syndromes-treatment-pdq','MEN1に関連する胸腺腫瘍の記載','公式医学解説（二次資料）')
 };
 const questions=[];
+let checkedAt='2026-11-03';
 function add(number,title,answer,explanation,notes,sources,format='single'){
- const domain=number<=20?'総論':number<=40?'技術':'体腔液・尿・その他';
- const page=number<=10?1:number<=20?2:number<=30?3:number<=40?4:number<=50?5:6;
- questions.push({id:`2025-58-${number}`,year:2025,round:58,number,domain,page,topic:title,title,format,selectCount:format==='multiple'?2:1,answer,status:'researched',revision:1,explanation,optionNotes:notes.map(([label,text])=>({label,text})),sources:sources.map(s=>S[s]),checkedAt:'2026-11-03'});
+ const {domain,page}=referenceFor(number);
+ questions.push({id:`2025-58-${number}`,year:2025,round:58,number,domain,page,topic:title,title,format,selectCount:format==='multiple'?2:1,answer,status:'researched',revision:1,explanation,optionNotes:notes.map(([label,text])=>({label,text})),sources:sources.map(s=>S[s]),checkedAt});
 }
 add(1,'細胞死と炎症反応',[4],'古典的なネクローシスでは、虚血や毒性物質などの傷害により細胞が膨化し、膜の破綻と内容物の流出が炎症を誘発します。C・Dの組合せを選びます。現代の細胞死分類には制御性ネクローシスもあるため、「壊死はすべて非制御性」と一般化しないことも大切です。',[
  ['A・B','感染細胞を選択的に除去する働きや細胞の縮小は、ここではアポトーシスとの対比で整理します。'],['C・D','細胞傷害に続く内容物の流出と、周囲の炎症反応を結びつけて考えます。'],['E','細胞内の制御機構による細胞死という記述は、この基礎的な対比ではアポトーシス側です。制御性壊死という例外的な概念とは区別します。']],['necrosis','necrosis2'],'combination');
@@ -81,5 +83,8 @@ add(50,'葉状腫瘍：上皮と間質',[4],'葉状腫瘍は上皮と間質か�
  ['1','上皮だけの腫瘍ではなく、上皮と間質の両成分を持ちます。'],['2・3','良性でも上皮成分があり、線維腺腫との鑑別が問題になります。上皮がないという説明ではありません。'],['4','悪性評価の中心は間質成分です。'],['5','異型乳管上皮の増殖を悪性葉状腫瘍の基本所見とはしません。']],['phyllodes']);
 add(55,'MENの病変分布',[4],'MEN1では副甲状腺、下垂体、膵・十二指腸の神経内分泌腫瘍が主要病変です。MEN2は甲状腺髄様癌、褐色細胞腫などが中心です。膵消化管内分泌腫瘍をMEN2の特徴とする対応が誤りです。',[
  ['1・2','下垂体腫瘍と多腺性の副甲状腺過形成はMEN1の病像と整合します。'],['3','MEN1関連の胸腺神経内分泌腫瘍は、予後上重要な病変です。'],['4','膵・十二指腸NETはMEN1の主要病変として整理します。'],['5','MEN2では髄様癌の生涯リスクが高くなります。ただし実際の浸透率・発症年齢はRETの遺伝子型や評価時点に依存し、診察時に全員が発症しているという意味ではありません。']],['men1','men2','menChild']);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:1,updatedAt:'2026-11-03',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+checkedAt='2026-11-04';
+addBatch(add,S,source);
+questions.sort((a,b)=>a.number-b.number);
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:2,updatedAt:'2026-11-04',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
