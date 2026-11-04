@@ -1,5 +1,6 @@
 import {writeFileSync} from 'node:fs';
 import {addBatch} from './content-2026-11-04.mjs';
+import {addSecondBatch} from './content-2026-11-04-b.mjs';
 import {referenceFor} from './question-reference.mjs';
 const source=(title,url,locator,kind='公式教材')=>({title,url,locator,kind});
 const S={
@@ -85,6 +86,7 @@ add(55,'MENの病変分布',[4],'MEN1では副甲状腺、下垂体、膵・十�
  ['1・2','下垂体腫瘍と多腺性の副甲状腺過形成はMEN1の病像と整合します。'],['3','MEN1関連の胸腺神経内分泌腫瘍は、予後上重要な病変です。'],['4','膵・十二指腸NETはMEN1の主要病変として整理します。'],['5','MEN2では髄様癌の生涯リスクが高くなります。ただし実際の浸透率・発症年齢はRETの遺伝子型や評価時点に依存し、診察時に全員が発症しているという意味ではありません。']],['men1','men2','menChild']);
 checkedAt='2026-11-04';
 addBatch(add,S,source);
+addSecondBatch(add,S,source);
 questions.sort((a,b)=>a.number-b.number);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:2,updatedAt:'2026-11-04',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:3,updatedAt:'2026-11-04',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
