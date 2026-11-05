@@ -1,6 +1,7 @@
 import {writeFileSync} from 'node:fs';
 import {addBatch} from './content-2026-11-04.mjs';
 import {addSecondBatch} from './content-2026-11-04-b.mjs';
+import {addDailyBatch} from './content-2026-11-06.mjs';
 import {referenceFor} from './question-reference.mjs';
 const source=(title,url,locator,kind='公式教材')=>({title,url,locator,kind});
 const S={
@@ -87,6 +88,8 @@ add(55,'MENの病変分布',[4],'MEN1では副甲状腺、下垂体、膵・十�
 checkedAt='2026-11-04';
 addBatch(add,S,source);
 addSecondBatch(add,S,source);
+checkedAt='2026-11-06';
+addDailyBatch(add,S,source);
 questions.sort((a,b)=>a.number-b.number);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:3,updatedAt:'2026-11-04',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:4,updatedAt:'2026-11-06',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
