@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-11-06",
+  "version": 5,
+  "updatedAt": "2026-11-10",
   "answerPolicy": "文献調査による独自解答。公式正答は未確認。",
   "questions": [
     {
@@ -789,6 +789,78 @@
       "checkedAt": "2026-11-06"
     },
     {
+      "id": "2025-58-20",
+      "year": 2025,
+      "round": 58,
+      "number": 20,
+      "domain": "総論",
+      "page": 2,
+      "topic": "肺癌の治療効果を予測する免疫染色",
+      "title": "肺癌の治療効果を予測する免疫染色",
+      "format": "multiple",
+      "selectCount": 2,
+      "answer": [
+        1,
+        5
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "ALKとPD-L1を選びます。ALKの免疫染色はALK阻害薬の、PD-L1の免疫染色は免疫チェックポイント阻害薬の適応判断に使われます。「診断に使う抗体」と「治療薬の選択に使う抗体」を分けて整理します。",
+      "optionNotes": [
+        {
+          "label": "1",
+          "text": "ALK（D5F3）の免疫染色は、ALK阻害薬のコンパニオン診断として使われます。"
+        },
+        {
+          "label": "2",
+          "text": "pan-TRKの免疫染色はNTRK融合のスクリーニングとして位置づけられ、陽性例は遺伝子検査で確認します。単独で治療効果を予測する検査とは扱いません。"
+        },
+        {
+          "label": "3",
+          "text": "NCIの解説は、肺癌のHER2標的治療の対象をHER2遺伝子バリアントとしています。乳癌・胃癌のHER2免疫染色とは位置づけが異なります。"
+        },
+        {
+          "label": "4",
+          "text": "TTF-1は肺腺癌の組織型・原発巣の推定に使う抗体であり、治療効果を予測する抗体ではありません。"
+        },
+        {
+          "label": "5",
+          "text": "NCIの解説に、PD-L1を高発現する腫瘍（免疫組織化学で評価）でペムブロリズマブによる生存改善が記載されています。"
+        },
+        {
+          "label": "注意点",
+          "text": "コンパニオン診断薬の承認状況は国・時期で変わります。日本での現在の承認・保険適用は、最新の肺癌診療ガイドラインと添付文書で確認してください。本解説は2026年11月時点で確認できた資料に基づきます。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "NCI PDQ · Non-Small Cell Lung Cancer Treatment",
+          "url": "https://www.cancer.gov/types/lung/hp/non-small-cell-lung-treatment-pdq",
+          "locator": "PD-L1発現（免疫組織化学）とペムブロリズマブ / NTRK融合・HER2バリアントに対する治療",
+          "kind": "公的機関の医学解説（二次資料・本文確認）"
+        },
+        {
+          "title": "Nambirajan et al. · Arch Pathol Lab Med（2024）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38054562/",
+          "locator": "Abstract：ALK（D5F3）はALK阻害薬のコンパニオン診断、ROS1の免疫染色はスクリーニング",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Vranić et al. · Biomol Biomed（2026）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42522678/",
+          "locator": "Abstract：非小細胞肺癌の治療効果予測における免疫組織化学の位置づけ",
+          "kind": "総説（抄録確認）"
+        },
+        {
+          "title": "Hyrcza et al. · Mod Pathol（2024）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37972928/",
+          "locator": "Abstract：pan-TRK免疫染色はスクリーニング検査",
+          "kind": "原著論文（抄録確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
+    },
+    {
       "id": "2025-58-22",
       "year": 2025,
       "round": 58,
@@ -1292,6 +1364,71 @@
       "checkedAt": "2026-11-04"
     },
     {
+      "id": "2025-58-44",
+      "year": 2025,
+      "round": 58,
+      "number": 44,
+      "domain": "体腔液・尿・その他",
+      "page": 5,
+      "topic": "甲状腺癌の亜型と細胞・組織所見",
+      "title": "甲状腺癌の亜型と細胞・組織所見",
+      "format": "combination",
+      "selectCount": 1,
+      "answer": [
+        4
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "びまん性硬化型乳頭癌の多数の砂粒体と、高細胞型乳頭癌の細胞の高さの定義を選びます。C・Dの組合せです。A・B・Eは、いずれも別の腫瘍の所見との取り違えです。",
+      "optionNotes": [
+        {
+          "label": "A",
+          "text": "扁平上皮化生はびまん性硬化型乳頭癌の特徴です。髄様癌の代表的所見ではありません。"
+        },
+        {
+          "label": "B",
+          "text": "低分化癌は充実性・索状・島状の構造が基準です。乳頭状集塊を特徴とはしません。"
+        },
+        {
+          "label": "C",
+          "text": "びまん性硬化型乳頭癌では、線維化、扁平上皮化生、多数の砂粒体がみられます。"
+        },
+        {
+          "label": "D",
+          "text": "高細胞型は、幅に対して丈が高い腫瘍細胞で定義されます。他の4つが明らかに誤りであるため、この記述を正しいものとして選びます。"
+        },
+        {
+          "label": "E",
+          "text": "すりガラス状核は乳頭癌の核所見です。濾胞癌の診断は被膜浸潤・脈管侵襲で行います。"
+        },
+        {
+          "label": "注意点",
+          "text": "高細胞型の「高さが幅の何倍か」は版によって異なります。今回確認できた2022年の論文は「2倍以上」の定義を用いていました。原本の「3倍以上」という数値は今回の調査で一次資料を確認できていません。WHO分類第5版・甲状腺癌取扱い規約の原典で確認してください。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Pillai et al. · Crit Rev Oncol Hematol（2015）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25577570/",
+          "locator": "Abstract：びまん性硬化型乳頭癌の線維化、扁平上皮化生、多数の砂粒体",
+          "kind": "総説（抄録確認）"
+        },
+        {
+          "title": "Xu & Ghossein · Semin Diagn Pathol（2020）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32360274/",
+          "locator": "Abstract：低分化癌のTurin基準（充実性・索状・島状構造）",
+          "kind": "総説（抄録確認）"
+        },
+        {
+          "title": "Samankan et al. · Pathol Res Pract（2022）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35834884/",
+          "locator": "Abstract：論文が用いた高細胞型の定義（高さが幅の2倍以上、30％以上）",
+          "kind": "原著論文（抄録確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
+    },
+    {
       "id": "2025-58-47",
       "year": 2025,
       "round": 58,
@@ -1557,6 +1694,146 @@
       "checkedAt": "2026-11-04"
     },
     {
+      "id": "2025-58-59",
+      "year": 2025,
+      "round": 58,
+      "number": 59,
+      "domain": "体腔液・尿・その他",
+      "page": 6,
+      "topic": "泌尿器悪性腫瘍の組織型と好発",
+      "title": "泌尿器悪性腫瘍の組織型と好発",
+      "format": "multiple",
+      "selectCount": 2,
+      "answer": [
+        2,
+        4
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "膀胱の小細胞神経内分泌癌は尿路上皮癌などと併存することが多く、膀胱の横紋筋肉腫は小児に好発します。この2つを選びます。",
+      "optionNotes": [
+        {
+          "label": "1",
+          "text": "膀胱頂部は尿膜管由来の腺癌の好発部位として整理します。尿路上皮癌の好発部位ではありません。"
+        },
+        {
+          "label": "2",
+          "text": "膀胱の小細胞癌は、他の組織型の癌との併存が多いと報告されています。"
+        },
+        {
+          "label": "3",
+          "text": "腎癌（腎細胞癌）の細胞が尿中に出現することは少なく、「しばしばみられる」とはいえません。この点は一般的見解として記載しており、今回の調査で頻度の数値は確認していません。"
+        },
+        {
+          "label": "4",
+          "text": "横紋筋肉腫は小児の腫瘍で、症例の半数が10歳までに発生します。泌尿生殖器は代表的な原発部位です。"
+        },
+        {
+          "label": "5",
+          "text": "膀胱原発リンパ腫はMALTリンパ腫などB細胞性が主体です。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "NCI PDQ · Bladder Cancer Treatment",
+          "url": "https://www.cancer.gov/types/bladder/hp/bladder-treatment-pdq",
+          "locator": "組織型：小細胞癌・腺癌 / 尿膜管由来の腺癌は膀胱頂部",
+          "kind": "公的機関の医学解説（二次資料・本文確認）"
+        },
+        {
+          "title": "Ismaili · Orphanet J Rare Dis（2011）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22078012/",
+          "locator": "Abstract：膀胱小細胞癌は他の組織型の癌との併存が多い",
+          "kind": "総説（抄録確認）"
+        },
+        {
+          "title": "NCI PDQ · Childhood Rhabdomyosarcoma Treatment",
+          "url": "https://www.cancer.gov/types/soft-tissue-sarcoma/hp/rhabdomyosarcoma-treatment-pdq",
+          "locator": "Incidence：症例の50％が10歳までに発生 / 原発部位：泌尿生殖器",
+          "kind": "公的機関の医学解説（二次資料・本文確認）"
+        },
+        {
+          "title": "Venyo · Adv Urol（2014）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24511310/",
+          "locator": "Abstract：膀胱リンパ腫はMALTリンパ腫、びまん性大細胞型B細胞リンパ腫が多い",
+          "kind": "総説（抄録確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
+    },
+    {
+      "id": "2025-58-60",
+      "year": 2025,
+      "round": 58,
+      "number": 60,
+      "domain": "体腔液・尿・その他",
+      "page": 6,
+      "topic": "リンパ節病変と特徴的所見",
+      "title": "リンパ節病変と特徴的所見",
+      "format": "multiple",
+      "selectCount": 2,
+      "answer": [
+        1,
+        5
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "結核性リンパ節炎のLanghans型巨細胞と、亜急性壊死性リンパ節炎（菊池病）の三日月状核をもつ組織球を選びます。肉芽腫をつくる疾患は、壊死の有無と種類で区別します。",
+      "optionNotes": [
+        {
+          "label": "1",
+          "text": "結核性リンパ節炎の穿刺吸引細胞診では、類上皮細胞集塊、Langhans型巨細胞、壊死がみられます。"
+        },
+        {
+          "label": "2",
+          "text": "反応性濾胞過形成は多彩なリンパ球と胚中心由来の細胞が主体です。肉芽腫性膿瘍は特徴ではありません。"
+        },
+        {
+          "label": "3",
+          "text": "猫ひっかき病は星芒状の微小膿瘍を伴う肉芽腫が特徴です。Schaumann小体はサルコイドーシスなどでみられる所見として整理します。"
+        },
+        {
+          "label": "4",
+          "text": "サルコイドーシスは非乾酪性の類上皮細胞肉芽腫です。乾酪壊死は結核を考える所見です。"
+        },
+        {
+          "label": "5",
+          "text": "菊池病では、核片を貪食し核が三日月状に偏在する組織球が一貫してみられると報告されています。"
+        },
+        {
+          "label": "注意点",
+          "text": "巨細胞や肉芽腫だけで結核と断定はできません。抗酸菌染色、培養、遺伝子検査などと合わせて判断されます。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Gupta et al. · Acta Cytol（1992）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/1580124/",
+          "locator": "Abstract：結核性リンパ節炎の穿刺吸引細胞診、類上皮細胞・Langhans型巨細胞・壊死",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Dwivedi et al. · Cureus（2025）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40462807/",
+          "locator": "Abstract：菊池病の穿刺吸引細胞診30例、三日月状核の組織球",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Jabcuga et al. · Am J Surg Pathol（2016）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26551620/",
+          "locator": "Abstract：猫ひっかき病リンパ節炎の星芒状微小膿瘍",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Sreeja et al. · J Oral Maxillofac Pathol（2022）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35968162/",
+          "locator": "Abstract：サルコイドーシスは非乾酪性肉芽腫",
+          "kind": "総説（抄録確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
+    },
+    {
       "id": "2025-58-61",
       "year": 2025,
       "round": 58,
@@ -1725,6 +2002,77 @@
       "checkedAt": "2026-11-04"
     },
     {
+      "id": "2025-58-68",
+      "year": 2025,
+      "round": 58,
+      "number": 68,
+      "domain": "呼吸器",
+      "page": 7,
+      "topic": "呼吸器疾患と非細胞成分の対応",
+      "title": "呼吸器疾患と非細胞成分の対応",
+      "format": "single",
+      "selectCount": 1,
+      "answer": [
+        4
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "気管支喘息—クルシュマン螺旋体、アスベスト肺—含鉄小体、好酸球性肺炎—シャルコー・ライデン結晶、クリプトコッカス症—莢膜の4つがすべてそろう選択肢4を選びます。",
+      "optionNotes": [
+        {
+          "label": "B—b",
+          "text": "クルシュマン螺旋体は細気管支内で濃縮された粘液の鋳型で、喘息患者の喀痰にみられます。喘息に特異的ではなく、慢性気管支炎などでも出現します。"
+        },
+        {
+          "label": "C—a",
+          "text": "含鉄小体は、吸入された繊維や粒子が鉄を含む蛋白で覆われたものです。石綿を芯とするものがアスベスト小体です。"
+        },
+        {
+          "label": "D—d",
+          "text": "シャルコー・ライデン結晶は好酸球に由来する結晶で、好酸球が増える病態でみられます。"
+        },
+        {
+          "label": "E—c",
+          "text": "クリプトコッカスは厚い莢膜を持ちます。今回確認した資料は莢膜が粘液染色（mucicarmine、Alcian blue）で染まることを示しています。PAS反応では主に菌体が染まるため、原本の「PAS陽性の莢膜構造」という表現はやや不正確です。"
+        },
+        {
+          "label": "A—e",
+          "text": "Sudan Ⅲ陽性の脂肪滴は、本来はリポイド肺炎の脂肪貪食マクロファージでみられる所見です。過敏性肺炎の特徴的所見としては確認できませんでした。"
+        },
+        {
+          "label": "注意点",
+          "text": "A—eの対応は教科書的な組合せとして確認できていません。他の4つの対応から選択肢4を選んでいます。公式正答が確認できた時点で見直します。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Sakula · Thorax（1986）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3538483/",
+          "locator": "表題：喘息患者の喀痰にみられるシャルコー・ライデン結晶とクルシュマン螺旋体",
+          "kind": "論文（表題のみ確認・抄録なし）"
+        },
+        {
+          "title": "Ghio et al. · J Environ Pathol Toxicol Oncol（2021）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33639069/",
+          "locator": "Abstract：喀痰・気管支肺胞洗浄液の含鉄小体",
+          "kind": "総説（抄録確認）"
+        },
+        {
+          "title": "Lazcano et al. · Arch Pathol Lab Med（1991）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/1720948/",
+          "locator": "Abstract：クリプトコッカスの莢膜と粘液染色",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Yokohori et al. · 日本呼吸器学会雑誌（2002）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12382424/",
+          "locator": "Abstract：外因性リポイド肺炎の洗浄液にみられる脂肪貪食マクロファージ（Sudan Ⅲ）",
+          "kind": "症例報告（抄録確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
+    },
+    {
       "id": "2025-58-70",
       "year": 2025,
       "round": 58,
@@ -1797,6 +2145,73 @@
         }
       ],
       "checkedAt": "2026-11-04"
+    },
+    {
+      "id": "2025-58-72",
+      "year": 2025,
+      "round": 58,
+      "number": 72,
+      "domain": "呼吸器",
+      "page": 8,
+      "topic": "アスペルギルスの形態と関連所見",
+      "title": "アスペルギルスの形態と関連所見",
+      "format": "single",
+      "selectCount": 1,
+      "answer": [
+        5
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "アレルギー性気管支肺アスペルギルス症（ABPA）の粘液栓や細胞診検体で多数みられるのは好酸球です。好中球とする記述が誤りです。",
+      "optionNotes": [
+        {
+          "label": "1・2",
+          "text": "アスペルギルスの菌糸は隔壁を持ち、壁が平行で幅が一定です。鋭角に分岐します。くびれを示すカンジダの仮性菌糸や、幅が不整なムーコルと区別します。"
+        },
+        {
+          "label": "3",
+          "text": "真菌の細胞壁はPAS反応とGrocott染色で染まります。この点は一般的な染色の知識として記載しています。"
+        },
+        {
+          "label": "4",
+          "text": "Aspergillus niger感染では、呼吸器検体に複屈折性のシュウ酸カルシウム結晶がみられ、診断の手がかりになります。"
+        },
+        {
+          "label": "5",
+          "text": "ABPAの粘液には多数の好酸球とシャルコー・ライデン結晶が含まれます。気管支洗浄の細胞診でも同様の所見が報告されています。"
+        },
+        {
+          "label": "注意点",
+          "text": "ABPAの病理組織では、細気管支内に壊死した好中球と好酸球が混在する病変も報告されています。好中球が全く出ないという意味ではありません。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Bosken et al. · Am J Surg Pathol（1988）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3344888/",
+          "locator": "Abstract：ABPAの粘液栓にみられる多数の好酸球とシャルコー・ライデン結晶",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Aubry & Fraser · Mod Pathol（1998）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9688180/",
+          "locator": "Abstract：気管支洗浄細胞診で好酸球、シャルコー・ライデン結晶、菌糸を含む粘液",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Son et al. · Infect Dis（2020）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31973617/",
+          "locator": "Abstract：鋭角分岐、隔壁、平行な壁、均一な幅の菌糸",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Reyes et al. · Acta Cytol（1979）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/285553/",
+          "locator": "Abstract：呼吸器検体のシュウ酸カルシウム結晶とAspergillus niger感染",
+          "kind": "症例報告（抄録確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
     },
     {
       "id": "2025-58-74",
@@ -1909,6 +2324,144 @@
         }
       ],
       "checkedAt": "2026-11-04"
+    },
+    {
+      "id": "2025-58-81",
+      "year": 2025,
+      "round": 58,
+      "number": 81,
+      "domain": "消化器",
+      "page": 9,
+      "topic": "口腔疾患と好発部位",
+      "title": "口腔疾患と好発部位",
+      "format": "combination",
+      "selectCount": 1,
+      "answer": [
+        4
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "口腔扁平苔癬—頬粘膜、エナメル上皮腫—下顎骨の組合せを選びます。C・Dです。粘膜の病変と顎骨内の病変を分け、それぞれの好発部位を対応させて整理します。",
+      "optionNotes": [
+        {
+          "label": "A",
+          "text": "白板症は頬粘膜、舌、歯肉などに多くみられます。口腔底を好発部位とはしません。部位別の頻度は今回の調査で一次資料を確認していません。"
+        },
+        {
+          "label": "B",
+          "text": "エプーリスは歯肉に生じる限局性の腫瘤を指す用語です。舌縁部ではありません。"
+        },
+        {
+          "label": "C",
+          "text": "口腔扁平苔癬の最多罹患部位は頬粘膜です。"
+        },
+        {
+          "label": "D",
+          "text": "エナメル上皮腫は下顎骨に好発します。"
+        },
+        {
+          "label": "E",
+          "text": "舌の扁平上皮癌は舌縁に最も多く発生します。舌背は好発部位ではありません。"
+        },
+        {
+          "label": "注意点",
+          "text": "Cの根拠は小児例の系統的レビューです。成人でも頬粘膜が代表的な部位とされますが、成人の頻度の数値は今回確認していません。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Spirito et al. · Med Oral Patol Oral Cir Bucal（2024）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38288854/",
+          "locator": "Abstract：口腔扁平苔癬の最多罹患部位は頬粘膜（小児例の系統的レビュー）",
+          "kind": "系統的レビュー（抄録確認）"
+        },
+        {
+          "title": "Hendra et al. · Oral Dis（2020）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30614154/",
+          "locator": "Abstract：エナメル上皮腫の好発部位は下顎骨",
+          "kind": "系統的レビュー・メタ解析（抄録確認）"
+        },
+        {
+          "title": "Khalesi et al. · Adv Biomed Res（2023）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37200763/",
+          "locator": "Abstract：舌扁平上皮癌の最多発生部位は舌縁",
+          "kind": "原著論文（抄録確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
+    },
+    {
+      "id": "2025-58-86",
+      "year": 2025,
+      "round": 58,
+      "number": 86,
+      "domain": "消化器",
+      "page": 9,
+      "topic": "唾液腺腫瘍の遺伝子・免疫染色・報告様式",
+      "title": "唾液腺腫瘍の遺伝子・免疫染色・報告様式",
+      "format": "single",
+      "selectCount": 1,
+      "answer": [
+        5
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "唾液腺細胞診のミラノシステムは、カテゴリーⅠ〜Ⅵの6つで構成されます。カテゴリーⅣ（腫瘍）は良性（Ⅳa）と悪性度不明（Ⅳb）に細分されます。",
+      "optionNotes": [
+        {
+          "label": "1",
+          "text": "多形腺腫は悪性転化することがあり、多形腺腫由来癌として知られています。"
+        },
+        {
+          "label": "2",
+          "text": "粘液背景を特徴とする記述は、筋上皮癌の代表的所見としては確認できませんでした。筋上皮性腫瘍では粘液様の基質を伴う例もあるため、この選択肢だけで判断せず、5が明確に正しいことから選びます。"
+        },
+        {
+          "label": "3",
+          "text": "ETV6::NTRK3融合遺伝子は分泌癌の特徴です。粘表皮癌ではCRTC1::MAML2融合遺伝子が代表的です。"
+        },
+        {
+          "label": "4",
+          "text": "アンドロゲン受容体の発現は唾液腺導管癌の特徴で、診断に利用されます。多形腺腫の特徴ではありません。"
+        },
+        {
+          "label": "5",
+          "text": "細分したⅣa・Ⅳbを別に数えると7区分になりますが、カテゴリーの数は6つです。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jalaly et al. · Diagn Cytopathol（2020）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32640095/",
+          "locator": "Abstract：ミラノシステムのカテゴリーⅠ〜Ⅵ（Ⅳはa・bに細分）",
+          "kind": "総説（抄録確認）"
+        },
+        {
+          "title": "Asai et al. · Pathol Int（2021）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33848386/",
+          "locator": "Abstract：分泌癌はETV6-NTRK3融合遺伝子を特徴とする",
+          "kind": "症例報告・文献レビュー（抄録確認）"
+        },
+        {
+          "title": "Chen et al. · JCI Insight（2021）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33830080/",
+          "locator": "Abstract：粘表皮癌のCRTC1-MAML2融合遺伝子",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Udager & Chiosea · Head Neck Pathol（2017）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28321773/",
+          "locator": "Abstract：唾液腺導管癌の診断におけるアンドロゲン受容体の免疫染色",
+          "kind": "総説（抄録確認）"
+        },
+        {
+          "title": "Hernandez-Prera et al. · Histopathology（2021）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33368685/",
+          "locator": "Abstract：多形腺腫の悪性転化（多形腺腫由来癌）",
+          "kind": "総説（抄録確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
     },
     {
       "id": "2025-58-87",
@@ -2059,6 +2612,79 @@
       "checkedAt": "2026-11-04"
     },
     {
+      "id": "2025-58-92",
+      "year": 2025,
+      "round": 58,
+      "number": 92,
+      "domain": "消化器",
+      "page": 10,
+      "topic": "肝腫瘍と腫瘍マーカー・背景因子",
+      "title": "肝腫瘍と腫瘍マーカー・背景因子",
+      "format": "single",
+      "selectCount": 1,
+      "answer": [
+        1
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "肝芽腫で上昇する代表的な腫瘍マーカーはAFP（α-フェトプロテイン）です。CA19-9とする対応が誤りです。他の4つは、腫瘍の由来や背景因子と整合する記述です。",
+      "optionNotes": [
+        {
+          "label": "1",
+          "text": "NCIの解説は、小児の肝悪性腫瘍の診断と経過観察にAFPが有用としています。AFPは良性腫瘍でも上昇することがあり、単独で悪性と断定はできません。"
+        },
+        {
+          "label": "2",
+          "text": "肝細胞癌の細胞診では、腫瘍細胞内や毛細胆管内の胆汁色素が肝細胞由来を示す手がかりになります。"
+        },
+        {
+          "label": "3",
+          "text": "肝の血管筋脂肪腫はHMB-45、Melan-Aなどのメラノサイト系マーカーが陽性です。"
+        },
+        {
+          "label": "4",
+          "text": "肝細胞腺腫は経口避妊薬などのステロイド薬の使用と関連し、若年〜中年の女性に多くみられます。"
+        },
+        {
+          "label": "5",
+          "text": "Fibrolamellar carcinomaは、背景に肝疾患・肝硬変のない思春期・若年成人に好発します。アジアでは非常にまれと報告されています。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "NCI PDQ · Childhood Liver Cancer Treatment",
+          "url": "https://www.cancer.gov/types/liver/hp/child-liver-treatment-pdq",
+          "locator": "Tumor markers：小児の肝悪性腫瘍におけるAFP",
+          "kind": "公的機関の医学解説（二次資料・本文確認）"
+        },
+        {
+          "title": "Barten · Zentralbl Allg Pathol（1989）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/2543163/",
+          "locator": "Abstract：肝細胞癌の穿刺吸引細胞診にみられる胆汁色素",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Liu et al. · World J Gastroenterol（2016）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27239117/",
+          "locator": "Abstract：肝の類上皮型血管筋脂肪腫でHMB-45、Melan-Aが陽性",
+          "kind": "原著論文（抄録確認）"
+        },
+        {
+          "title": "Renzulli et al. · World J Gastroenterol（2019）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31171888/",
+          "locator": "Abstract：肝細胞腺腫と経口避妊薬の関連",
+          "kind": "総説（抄録確認）"
+        },
+        {
+          "title": "Chaudhari et al. · Chin Clin Oncol（2018）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30395718/",
+          "locator": "Abstract：Fibrolamellar carcinomaは背景肝疾患のない思春期・若年成人に好発",
+          "kind": "総説（抄録確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
+    },
+    {
       "id": "2025-58-94",
       "year": 2025,
       "round": 58,
@@ -2094,6 +2720,72 @@
         }
       ],
       "checkedAt": "2026-11-04"
+    },
+    {
+      "id": "2025-58-96",
+      "year": 2025,
+      "round": 58,
+      "number": 96,
+      "domain": "消化器",
+      "page": 10,
+      "topic": "胆道・肝の腫瘍性病変",
+      "title": "胆道・肝の腫瘍性病変",
+      "format": "multiple",
+      "selectCount": 2,
+      "answer": [
+        3,
+        4
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "胆管内乳頭状腫瘍（IPNB）のtype 1・type 2分類と、膵・胆管合流異常が胆道癌の危険因子であることを選びます。",
+      "optionNotes": [
+        {
+          "label": "1",
+          "text": "肝粘液嚢胞性腫瘍は卵巣様間質を伴い、女性に好発します。"
+        },
+        {
+          "label": "2",
+          "text": "早期の胆嚢癌は無症状のことが多く、黄疸は進行して胆管が閉塞した段階でみられる症状です。この点は一般的見解として記載しています。"
+        },
+        {
+          "label": "3",
+          "text": "日本と韓国の病理医による合意声明で、膵IPMNに類似するtype 1と、より複雑な構造を示すtype 2に分類されました。"
+        },
+        {
+          "label": "4",
+          "text": "胆管拡張を伴う膵・胆管合流異常は胆嚢癌と胆管癌の、胆管拡張を伴わない合流異常は胆嚢癌の危険因子と報告されています。"
+        },
+        {
+          "label": "5",
+          "text": "低異型度の上皮内腫瘍で結合性の低下を特徴とする記述は確認できませんでした。結合性の低下は一般に高異型度の病変や癌を考える所見です。"
+        },
+        {
+          "label": "注意点",
+          "text": "4は、合流異常のすべての型で肝外胆管癌が増えるという意味ではありません。胆管拡張の有無でリスクのある部位が異なります。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Nakanuma et al. · J Hepatobiliary Pancreat Sci（2018）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29272078/",
+          "locator": "Abstract：日韓の病理医によるIPNBのtype 1・type 2分類",
+          "kind": "専門家合意声明（抄録確認）"
+        },
+        {
+          "title": "Miyazaki et al. · J Hepatobiliary Pancreat Surg（2008）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18274840/",
+          "locator": "Abstract：膵・胆管合流異常と胆嚢癌・胆管癌のリスク（胆管拡張の有無による違い）",
+          "kind": "診療ガイドライン関連論文（抄録確認）"
+        },
+        {
+          "title": "Hutchens et al. · Hepat Med（2023）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37016682/",
+          "locator": "Abstract：肝粘液嚢胞性腫瘍の女性優位と卵巣様間質",
+          "kind": "総説（抄録確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
     },
     {
       "id": "2025-58-103",
@@ -2478,6 +3170,47 @@
         }
       ],
       "checkedAt": "2026-11-04"
+    },
+    {
+      "id": "2025-58-114",
+      "year": 2025,
+      "round": 58,
+      "number": 114,
+      "domain": "婦人科",
+      "page": 12,
+      "topic": "婦人科疾患と薬物療法",
+      "title": "婦人科疾患と薬物療法",
+      "format": "single",
+      "selectCount": 1,
+      "answer": [
+        4
+      ],
+      "status": "researched",
+      "revision": 1,
+      "explanation": "子宮内膜増殖症にエストロゲン単独の製剤（結合型エストロゲン）を使う対応が誤りです。エストロゲンは子宮内膜の増殖・増殖症・癌と関連し、増殖症の薬物療法には黄体ホルモン製剤が使われます。",
+      "optionNotes": [
+        {
+          "label": "1・2・3・5",
+          "text": "低用量エストロゲン・プロゲスチン配合薬と月経困難症、GnRHアンタゴニストと子宮筋腫、黄体ホルモン製剤と子宮内膜症、エストロゲン・黄体ホルモンの経皮吸収型製剤と更年期障害は、いずれも治療として用いられる組合せです。"
+        },
+        {
+          "label": "4",
+          "text": "NCIの解説は、エストロゲンが子宮内膜の増殖、増殖症、癌と関連すること、黄体ホルモンを併用しないエストロゲン療法が危険因子であることを示しています。"
+        },
+        {
+          "label": "注意点",
+          "text": "1・2・3・5の各薬剤の日本での効能・効果は、今回の調査で添付文書を確認していません。一般的な治療の組合せとして記載しています。個々の患者の治療選択は医師が判断する領域です。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "NCI PDQ · Endometrial Cancer Prevention",
+          "url": "https://www.cancer.gov/types/uterine/hp/endometrial-prevention-pdq",
+          "locator": "Risk factors：エストロゲンと子宮内膜の増殖・増殖症・癌 / Unopposed estrogen",
+          "kind": "公的機関の医学解説（二次資料・本文確認）"
+        }
+      ],
+      "checkedAt": "2026-11-10"
     },
     {
       "id": "2025-58-115",
