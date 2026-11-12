@@ -3,6 +3,7 @@ import {writeFileSync,readFileSync} from 'node:fs';
 import {addBatch} from './content-2026-11-04.mjs';
 import {addSecondBatch} from './content-2026-11-04-b.mjs';
 import {addDailyBatch} from './content-2026-11-06.mjs';
+import {addNov13} from './content-2026-11-13.mjs';
 import {addNov11} from './content-2026-11-11.mjs';
 import {referenceFor} from './question-reference.mjs';
 const source=(title,url,locator,kind='公式教材')=>({title,url,locator,kind});
@@ -94,6 +95,8 @@ checkedAt='2026-11-06';
 addDailyBatch(add,S,source);
 checkedAt='2026-11-11';
 addNov11(add,S,source);
+checkedAt='2026-11-13';
+addNov13(add,S,source);
 // Only text approved for publication belongs in this separate source file.
 const inlineTexts=JSON.parse(readFileSync(new URL('./question-texts.json',import.meta.url),'utf8'));
 const textIds=new Set();
@@ -105,5 +108,5 @@ for(const entry of inlineTexts){
  textIds.add(entry.id);Object.assign(q,{prompt:entry.prompt,options:entry.options,...(entry.statements?{statements:entry.statements}:{})});
 }
 questions.sort((a,b)=>a.number-b.number);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-11',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-13',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
