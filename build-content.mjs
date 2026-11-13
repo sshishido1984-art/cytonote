@@ -3,6 +3,7 @@ import {addBatch} from './content-2026-11-04.mjs';
 import {addSecondBatch} from './content-2026-11-04-b.mjs';
 import {addDailyBatch} from './content-2026-11-06.mjs';
 import {addThirdBatch} from './content-2026-11-10.mjs';
+import {addFourthBatch} from './content-2026-11-13.mjs';
 import {referenceFor} from './question-reference.mjs';
 const source=(title,url,locator,kind='公式教材')=>({title,url,locator,kind});
 const S={
@@ -93,6 +94,8 @@ checkedAt='2026-11-06';
 addDailyBatch(add,S,source);
 checkedAt='2026-11-10';
 addThirdBatch(add,S,source);
+checkedAt='2026-11-13';
+addFourthBatch(add,S,source);
 questions.sort((a,b)=>a.number-b.number);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-10',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:6,updatedAt:'2026-11-13',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);

@@ -11,7 +11,7 @@ test('PDF references follow the actual irregular page boundaries',()=>{
  for(const q of bank)assert.deepEqual({page:q.page,domain:q.domain},referenceFor(q.number));
 });
 test('the first expansion covers all six domains with 24 new explained questions',()=>{
- assert.equal(bank.length,72);assert.equal(new Set(bank.map(q=>q.domain)).size,6);
+ assert.equal(bank.length,77);assert.equal(new Set(bank.map(q=>q.domain)).size,6);
  assert.deepEqual(bank.filter(q=>q.checkedAt==='2026-11-04'&&![18,23,30,32,36,57,65,70,71,87,90,109,111,113,115,120].includes(q.number)).map(q=>q.number),[10,25,33,43,47,51,52,61,64,66,74,75,78,89,91,94,103,104,105,107,108,110,112,117]);
 });
 test('a saved record from the original bank survives expansion and new questions remain unanswered',()=>{
@@ -20,7 +20,7 @@ test('a saved record from the original bank survives expansion and new questions
  recordAnswer(s,q,q.answer,'sure');s.bookmarks=[q.id];s.notes[q.id]='保存済みメモ';
  const loaded=normalizeState(JSON.parse(JSON.stringify(s)),bank);
  assert.equal(loaded.attempts.length,1);assert.equal(loaded.attempts[0].correct,true);assert.equal(loaded.notes[q.id],'保存済みメモ');assert.deepEqual(loaded.bookmarks,[q.id]);
- assert.equal(chooseQuestions(bank,loaded,{filter:'unanswered'}).length,71);
+ assert.equal(chooseQuestions(bank,loaded,{filter:'unanswered'}).length,76);
 });
 
 test('the second expansion adds 16 original references without changing published answers',()=>{
@@ -38,11 +38,23 @@ test('daily expansion preserves all 60 published answers and adds Q19',()=>{
 test('third expansion preserves all 61 published answers and adds 11 sourced questions',()=>{
  const previous=JSON.parse(readFileSync(new URL('./fixtures/published-61-answers.json',import.meta.url)));
  for(const [id,answer] of Object.entries(previous))assert.deepEqual(bank.find(q=>q.id===id)?.answer,answer,id);
- const added=bank.filter(q=>!Object.hasOwn(previous,q.id));
+ const added=bank.filter(q=>q.checkedAt==='2026-11-10');
  assert.deepEqual(added.map(q=>q.number),[20,44,59,60,68,72,81,86,92,96,114]);
  for(const q of added){
   assert.equal(q.checkedAt,'2026-11-10');assert.equal(q.answer.length,q.selectCount,`Q${q.number}`);
   assert.ok(q.explanation.length>30&&q.optionNotes.length>=3,`Q${q.number}`);
   assert.ok(q.sources.length>=1&&q.sources.every(s=>s&&/^https:\/\/(www\.cancer\.gov|pubmed\.ncbi\.nlm\.nih\.gov)\//.test(s.url)&&s.locator&&s.kind),`Q${q.number}`);
+ }
+});
+
+test('fourth expansion preserves all 72 published answers and adds 5 technical questions',()=>{
+ const previous=JSON.parse(readFileSync(new URL('./fixtures/published-72-answers.json',import.meta.url)));
+ for(const [id,answer] of Object.entries(previous))assert.deepEqual(bank.find(q=>q.id===id)?.answer,answer,id);
+ const added=bank.filter(q=>!Object.hasOwn(previous,q.id));
+ assert.deepEqual(added.map(q=>[q.number,q.answer]),[[21,[2]],[26,[4]],[27,[5]],[29,[3]],[37,[1,5]]]);
+ for(const q of added){
+  assert.equal(q.checkedAt,'2026-11-13');assert.equal(q.domain,'技術');assert.equal(q.answer.length,q.selectCount,`Q${q.number}`);
+  assert.ok(q.optionNotes.length>=5,`Q${q.number}`);
+  assert.ok(q.sources.length>=4&&q.sources.every(s=>s&&/^https:\/\/(laws\.e-gov\.go\.jp|www\.mhlw\.go\.jp|www\.microscopyu\.com|pubchem\.ncbi\.nlm\.nih\.gov|pmc\.ncbi\.nlm\.nih\.gov|pubmed\.ncbi\.nlm\.nih\.gov)\//.test(s.url)&&s.locator&&s.kind),`Q${q.number}`);
  }
 });
