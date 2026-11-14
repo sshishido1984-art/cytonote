@@ -11,7 +11,7 @@ test('PDF references follow the actual irregular page boundaries',()=>{
  for(const q of bank)assert.deepEqual({page:q.page,domain:q.domain},referenceFor(q.number));
 });
 test('the first expansion covers all six domains with 24 new explained questions',()=>{
- assert.equal(bank.length,63);assert.equal(new Set(bank.map(q=>q.domain)).size,6);
+ assert.equal(bank.length,64);assert.equal(new Set(bank.map(q=>q.domain)).size,6);
  assert.deepEqual(bank.filter(q=>q.checkedAt==='2026-11-04'&&![18,23,30,32,36,57,65,70,71,87,90,109,111,113,115,120].includes(q.number)).map(q=>q.number),[10,25,33,43,47,51,52,61,64,66,74,75,78,89,91,94,103,104,105,107,108,110,112,117]);
 });
 test('a saved record from the original bank survives expansion and new questions remain unanswered',()=>{
@@ -44,7 +44,7 @@ test('Nov 11 preserves 61 published answers and adds Q3',()=>{
 test('Nov 13 preserves 62 published answers and adds Q31 with traced sources',()=>{
  const previous=JSON.parse(readFileSync(new URL('./fixtures/published-62-answers.json',import.meta.url)));
  for(const [id,answer] of Object.entries(previous))assert.deepEqual(bank.find(q=>q.id===id)?.answer,answer,id);
- const added=bank.filter(q=>!Object.hasOwn(previous,q.id));
+ const added=bank.filter(q=>q.checkedAt==='2026-11-13'&&!Object.hasOwn(previous,q.id));
  assert.deepEqual(added.map(q=>[q.number,q.answer]),[[31,[2]]]);
  assert.equal(added[0].optionNotes.length,5);assert.equal(added[0].sources.length,6);
 });

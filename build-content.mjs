@@ -97,6 +97,19 @@ checkedAt='2026-11-11';
 addNov11(add,S,source);
 checkedAt='2026-11-13';
 addNov13(add,S,source);
+checkedAt='2026-11-15';
+S.formaldehydeWork=source('厚生労働省・ホルムアルデヒドに係る主要な措置','https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei17/dl/17a.pdf','「作業環境測定」及び「作業の記録の保存（特化則第38条の4）」の本文','行政資料（本文確認）');
+S.formaldehydeTiming=source('厚生労働省・職域における屋内空気中のホルムアルデヒド濃度低減のためのガイドライン','https://www.mhlw.go.jp/houdou/2002/03/h0315-4.html','測定時刻の記述。通常の作業時間と発散源に近接する作業の扱いを確認','行政指針（測定時刻の参照）');
+S.formaldehydeLaw=source('厚生労働省・職場のあんぜんサイト「ホルムアルデヒド」','https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html','15．適用法令、毒物及び劇物取締法の欄。物質自体の分類を確認','行政資料（モデルSDS本文確認）');
+add(37,'ホルムアルデヒドの作業環境管理',[1,5],
+ '管理濃度と法令上の分類が問われています。対象の屋内作業場で測定結果を評価する際の管理濃度は0.1 ppmです。ホルムアルデヒド自体は毒物及び劇物取締法の別表第二に掲げられた劇物です。',
+ [
+  ['1','管理濃度は作業環境の状態を評価するための値です。単位を含めて0.1 ppmと読みます。'],
+  ['2','特化則の対象業務について作成した労働者の作業記録は30年間保存します。'],
+  ['3','実際の作業による発散を捉えられる時間帯に測定します。発散源の近くでは、作業中に濃度が高くなると見込まれる時点を選びます。'],
+  ['4','対象の屋内作業場で定期測定を行う間隔は、原則として6か月以内ごとに1回です。'],
+  ['5','厚生労働省のモデルSDSでは、適用法令の欄でホルムアルデヒドを劇物に分類しています。']
+ ],['formaldehydeWork','formaldehydeTiming','formaldehydeLaw'],'multiple');
 // Only text approved for publication belongs in this separate source file.
 const inlineTexts=JSON.parse(readFileSync(new URL('./question-texts.json',import.meta.url),'utf8'));
 const textIds=new Set();
@@ -108,5 +121,5 @@ for(const entry of inlineTexts){
  textIds.add(entry.id);Object.assign(q,{prompt:entry.prompt,options:entry.options,...(entry.statements?{statements:entry.statements}:{})});
 }
 questions.sort((a,b)=>a.number-b.number);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-13',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-15',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
