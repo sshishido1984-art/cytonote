@@ -110,6 +110,17 @@ add(37,'ホルムアルデヒドの作業環境管理',[1,5],
   ['4','対象の屋内作業場で定期測定を行う間隔は、原則として6か月以内ごとに1回です。'],
   ['5','厚生労働省のモデルSDSでは、適用法令の欄でホルムアルデヒドを劇物に分類しています。']
  ],['formaldehydeWork','formaldehydeTiming','formaldehydeLaw'],'multiple');
+checkedAt='2026-11-16';
+S.mesoMorphology=source('日本石綿・中皮腫学会「中皮腫の細胞診断」','https://jamig.or.jp/pathology/cytodiagnosis/','体腔液細胞診の特徴的所見の一覧（7、11）と写真。主に上皮様成分を対象とする。','学会教材（本文確認）');
+S.mesoStroma=source('体腔液細胞診における collagenous stroma を有する細胞集塊について','https://www.jstage.jst.go.jp/article/jjscc/48/5/48_5_312/_article/-char/ja','日本臨床細胞学会雑誌48巻5号、抄録「成績」「結論」。反応性中皮群と悪性中皮腫群の集塊型を比較。','原著研究（抄録確認）');
+add(41,'体腔液で中皮腫を疑う細胞所見',[2],
+ '独自解答は2（A・E）です。上皮様中皮腫の体腔液では、細胞質がオレンジGに強く染まる細胞と、一方の細胞が隣の細胞を包み込むように見える相互封入像が手掛かりになります。',
+ [
+  ['A・E','学会教材は両所見を写真付きで示しています。染まり方と細胞同士の位置関係に注目します。'],
+  ['B','相互封入像で観察するのは細胞同士の関係です。核の内部に見える細胞質封入体とは観察する場所が異なります。'],
+  ['C','反応性中皮との鑑別が難しいほど異型が軽い例があります。著しい核形の乱れを典型像として選ぶ根拠は乏しいと判断しました。'],
+  ['D','膠原性間質を囲む集塊は型まで確認します。比較研究ではⅠ型は反応性中皮群に出現し、中皮腫群ではⅡ型・Ⅲ型が観察されました。この型分類は間質を囲む細胞の形態に基づきます。']
+ ],['mesoMorphology','mesoStroma'],'combination');
 // Only text approved for publication belongs in this separate source file.
 const inlineTexts=JSON.parse(readFileSync(new URL('./question-texts.json',import.meta.url),'utf8'));
 const textIds=new Set();
@@ -121,5 +132,5 @@ for(const entry of inlineTexts){
  textIds.add(entry.id);Object.assign(q,{prompt:entry.prompt,options:entry.options,...(entry.statements?{statements:entry.statements}:{})});
 }
 questions.sort((a,b)=>a.number-b.number);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-15',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-16',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
