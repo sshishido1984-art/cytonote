@@ -121,6 +121,17 @@ add(41,'体腔液で中皮腫を疑う細胞所見',[2],
   ['C','反応性中皮との鑑別が難しいほど異型が軽い例があります。著しい核形の乱れを典型像として選ぶ根拠は乏しいと判断しました。'],
   ['D','膠原性間質を囲む集塊は型まで確認します。比較研究ではⅠ型は反応性中皮群に出現し、中皮腫群ではⅡ型・Ⅲ型が観察されました。この型分類は間質を囲む細胞の形態に基づきます。']
  ],['mesoMorphology','mesoStroma'],'combination');
+checkedAt='2026-11-17';
+S.thyroidDiffuse=source('Carcangiu・Bianchi：びまん性硬化型乳頭癌15例の病理学的検討（1989）','https://pubmed.ncbi.nlm.nih.gov/2490923/','抄録の形態所見。砂粒体、扁平上皮化生、間質の線維化を記載。','原著研究（抄録確認）');
+S.thyroidCap=source('College of American Pathologists・甲状腺癌切除標本プロトコル v4.4.0.0（2023）','https://www.cap.org/wp-content/uploads/2026/07/Thyroid_4.4.0.0.REL_CAPCP.pdf?download=true','説明注の乳頭癌亜型の項（tall cell）とH節（低分化癌の増殖様式）。WHO 2022分類に対応する本文を確認。','学会病理プロトコル（本文確認）');
+add(44,'甲状腺乳頭癌の亜型を見分ける',[4],
+ '独自解答は4（C・D）です。びまん性硬化型では多数の砂粒体が手掛かりです。高細胞型では腫瘍細胞の高さと幅を比べます。',
+ [
+  ['A・C','びまん性硬化型の15例を扱った原著は、多数の砂粒体に加え、扁平上皮化生、線維化、リンパ球浸潤を特徴に挙げています。髄様癌の典型像として扁平上皮化生を選ぶ根拠にはなりません。'],
+  ['B','低分化癌の組織構築で注目するのは充実性、索状、島状の増殖です。細胞集塊を評価する際にもこの構築が手掛かりになります。'],
+  ['D','WHO 2022分類に沿ったCAPの基準では、高さが幅の3倍以上の細胞を高細胞とし、こうした細胞が腫瘍の30%以上を占めることが高細胞型の条件です。'],
+  ['E','すりガラス状に見える核は乳頭癌で着目する核所見です。濾胞癌では、切除標本で被膜浸潤や血管侵襲などを評価します。']
+ ],['thyroidDiffuse','thyroidCap'],'combination');
 // Only text approved for publication belongs in this separate source file.
 const inlineTexts=JSON.parse(readFileSync(new URL('./question-texts.json',import.meta.url),'utf8'));
 const textIds=new Set();
@@ -132,5 +143,5 @@ for(const entry of inlineTexts){
  textIds.add(entry.id);Object.assign(q,{prompt:entry.prompt,options:entry.options,...(entry.statements?{statements:entry.statements}:{})});
 }
 questions.sort((a,b)=>a.number-b.number);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-16',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-17',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
