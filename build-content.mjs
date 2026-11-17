@@ -1,3 +1,4 @@
+import {addNov18} from './content-2026-11-18.mjs';
 import {hasQuestionText} from './dist/question-text.mjs';
 import {writeFileSync,readFileSync} from 'node:fs';
 import {addBatch} from './content-2026-11-04.mjs';
@@ -132,6 +133,8 @@ add(44,'甲状腺乳頭癌の亜型を見分ける',[4],
   ['D','WHO 2022分類に沿ったCAPの基準では、高さが幅の3倍以上の細胞を高細胞とし、こうした細胞が腫瘍の30%以上を占めることが高細胞型の条件です。'],
   ['E','すりガラス状に見える核は乳頭癌で着目する核所見です。濾胞癌では、切除標本で被膜浸潤や血管侵襲などを評価します。']
  ],['thyroidDiffuse','thyroidCap'],'combination');
+checkedAt='2026-11-18';
+addNov18(add,S,source);
 // Only text approved for publication belongs in this separate source file.
 const inlineTexts=JSON.parse(readFileSync(new URL('./question-texts.json',import.meta.url),'utf8'));
 const textIds=new Set();
@@ -143,5 +146,5 @@ for(const entry of inlineTexts){
  textIds.add(entry.id);Object.assign(q,{prompt:entry.prompt,options:entry.options,...(entry.statements?{statements:entry.statements}:{})});
 }
 questions.sort((a,b)=>a.number-b.number);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-17',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-18',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
