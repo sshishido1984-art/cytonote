@@ -11,7 +11,7 @@ test('PDF references follow the actual irregular page boundaries',()=>{
  for(const q of bank)assert.deepEqual({page:q.page,domain:q.domain},referenceFor(q.number));
 });
 test('the first expansion covers all six domains with 24 new explained questions',()=>{
- assert.equal(bank.length,71);assert.equal(new Set(bank.map(q=>q.domain)).size,6);
+ assert.equal(bank.length,74);assert.equal(new Set(bank.map(q=>q.domain)).size,6);
  assert.deepEqual(bank.filter(q=>q.checkedAt==='2026-11-04'&&![18,23,30,32,36,57,65,70,71,87,90,109,111,113,115,120].includes(q.number)).map(q=>q.number),[10,25,33,43,47,51,52,61,64,66,74,75,78,89,91,94,103,104,105,107,108,110,112,117]);
 });
 test('a saved record from the original bank survives expansion and new questions remain unanswered',()=>{
