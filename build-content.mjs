@@ -1,3 +1,4 @@
+import {addNov22} from './content-2026-11-22.mjs';
 import {addNov21} from './content-2026-11-21.mjs';
 import {addNov18} from './content-2026-11-18.mjs';
 import {hasQuestionText} from './dist/question-text.mjs';
@@ -138,6 +139,8 @@ checkedAt='2026-11-18';
 addNov18(add,S,source);
 checkedAt='2026-11-21';
 addNov21(add,S,source);
+checkedAt='2026-11-22';
+addNov22(add,S,source);
 // Only text approved for publication belongs in this separate source file.
 const inlineTexts=JSON.parse(readFileSync(new URL('./question-texts.json',import.meta.url),'utf8'));
 const textIds=new Set();
@@ -149,5 +152,5 @@ for(const entry of inlineTexts){
  textIds.add(entry.id);Object.assign(q,{prompt:entry.prompt,options:entry.options,...(entry.statements?{statements:entry.statements}:{})});
 }
 questions.sort((a,b)=>a.number-b.number);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-21',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-22',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
