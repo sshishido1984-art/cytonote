@@ -29,9 +29,9 @@ export function stats(state,questions) {
  const first=[...firstByQuestion({...state,attempts}).values()];
  return {attempts:attempts.length,answered:first.length,correct:first.filter(a=>a.correct).length,rate:first.length?Math.round(100*first.filter(a=>a.correct).length/first.length):null,review:reviewIds({...state,attempts}).length};
 }
-export function chooseQuestions(questions,state,{domain='all',filter='all',search='',limit=0,shuffle=false}={}) {
+export function chooseQuestions(questions,state,{domain='all',kind='all',filter='all',search='',limit=0,shuffle=false}={}) {
  const latest=latestByQuestion(state);const review=new Set(reviewIds(state));const term=search.trim().toLowerCase();
- let result=questions.filter(q=>(domain==='all'||q.domain===domain) && (!term||`${q.title} ${q.topic} ${q.number} ${q.domain}`.toLowerCase().includes(term)) && (filter==='all'||filter==='unanswered'&&!latest.has(q.id)||filter==='wrong'&&latest.has(q.id)&&!latest.get(q.id).correct||filter==='unsure'&&latest.get(q.id)?.confidence==='unsure'||filter==='saved'&&state.bookmarks.includes(q.id)||filter==='review'&&review.has(q.id)));
+ let result=questions.filter(q=>(kind==='all'||(q.kind??'past')===kind) && (domain==='all'||q.domain===domain) && (!term||`${q.title} ${q.topic} ${q.number} ${q.domain}`.toLowerCase().includes(term)) && (filter==='all'||filter==='unanswered'&&!latest.has(q.id)||filter==='wrong'&&latest.has(q.id)&&!latest.get(q.id).correct||filter==='unsure'&&latest.get(q.id)?.confidence==='unsure'||filter==='saved'&&state.bookmarks.includes(q.id)||filter==='review'&&review.has(q.id)));
  if(shuffle){result=[...result];for(let i=result.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}}
  return limit?result.slice(0,limit):result;
 }

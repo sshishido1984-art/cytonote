@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {referenceFor} from '../question-reference.mjs';
 import {freshState,normalizeState,recordAnswer,chooseQuestions} from '../dist/core.mjs';
-const bank=JSON.parse(readFileSync(new URL('../dist/questions.json',import.meta.url))).questions;
+const bank=JSON.parse(readFileSync(new URL('../dist/questions.json',import.meta.url))).questions.filter(q=>q.kind!=='practice');
 test('PDF references follow the actual irregular page boundaries',()=>{
  for(const [n,page] of [[1,1],[10,1],[11,2],[60,6],[61,7],[69,7],[70,8],[79,8],[80,9],[89,9],[90,10],[99,10],[100,11],[109,11],[110,12],[119,12],[120,13]])assert.equal(referenceFor(n).page,page,`Q${n}`);
  assert.equal(referenceFor(80).domain,'呼吸器');assert.equal(referenceFor(81).domain,'消化器');assert.equal(referenceFor(100).domain,'消化器');assert.equal(referenceFor(101).domain,'婦人科');

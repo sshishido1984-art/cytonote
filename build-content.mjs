@@ -152,5 +152,10 @@ for(const entry of inlineTexts){
  textIds.add(entry.id);Object.assign(q,{prompt:entry.prompt,options:entry.options,...(entry.statements?{statements:entry.statements}:{})});
 }
 questions.sort((a,b)=>a.number-b.number);
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-22',answerPolicy:'文献調査による独自解答。公式正答は未確認。',questions},null,2)+'\n');
+const practice=JSON.parse(readFileSync(new URL('./practice-questions.json',import.meta.url),'utf8'));
+for(const q of practice){
+ if(q.kind!=='practice'||!q.id.startsWith('practice-')||questions.some(old=>old.id===q.id)||!hasQuestionText(q))throw new Error(`Invalid practice question: ${q.id}`);
+ questions.push(q);
+}
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-23',answerPolicy:'オリジナル予想問題と過去問の独自解答。学会公式の教材ではありません。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
