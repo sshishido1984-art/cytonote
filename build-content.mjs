@@ -157,5 +157,5 @@ for(const q of practice){
  if(q.kind!=='practice'||!q.id.startsWith('practice-')||questions.some(old=>old.id===q.id)||!hasQuestionText(q))throw new Error(`Invalid practice question: ${q.id}`);
  questions.push(q);
 }
-writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-24',answerPolicy:'オリジナル予想問題と過去問の独自解答。学会公式の教材ではありません。',questions},null,2)+'\n');
+writeFileSync(new URL('./dist/questions.json',import.meta.url),JSON.stringify({version:5,updatedAt:'2026-11-28',answerPolicy:'オリジナル予想問題と過去問の独自解答。学会公式の教材ではありません。',questions},null,2)+'\n');
 console.log(`Wrote ${questions.length} researched questions.`);
